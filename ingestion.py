@@ -1,7 +1,9 @@
 import os
 import re
 from typing import List, Dict
+import os
 
+DATA_PATH = os.path.join("data", "raw")
 def load_documents(data_path: str) -> List[Dict]:
 
     documents = []
@@ -72,10 +74,11 @@ def chunk_documents(documents: List[Dict],
 
 
 if __name__ == "__main__":
-    DATA_PATH = "C:/Users/HEMIN/Desktop/AgenticAI/TrainingData"
+    DATA_PATH = "data/raw"
 
     docs = load_documents(DATA_PATH)
     chunks = chunk_documents(docs)
 
     print("\nExample Chunk:\n")
     print(chunks[0])
+
